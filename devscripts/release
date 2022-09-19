@@ -1,0 +1,16 @@
+#! /bin/sh
+
+cd "`dirname \"$0\"`"/.. &&
+umask 022 &&
+chmod -R a+rX . &&
+set-commit-date.py &&
+
+python setup.py build_py &&
+python setup.py build --executable '/usr/bin/env python' &&
+python setup.py sdist &&
+
+find build -name '*.py[co]' -delete &&
+python setup.py bdist_wheel --universal &&
+
+twine upload --skip-existing dist/* &&
+exec rm -rf build dist CT3.egg-info

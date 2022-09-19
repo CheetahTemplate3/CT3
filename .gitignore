@@ -1,0 +1,11 @@
+/.cache/
+/.pytest_cache/
+/.tox/
+/CT3.egg-info/
+/build/
+/data/
+/dist/
+/MANIFEST
+*.py[co]
+*.tmp
+*~
