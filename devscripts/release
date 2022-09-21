@@ -10,5 +10,5 @@ python setup.py build --executable '/usr/bin/env python' &&
 python setup.py sdist &&
 python setup.py bdist_wheel --universal &&
 
-twine upload --skip-existing dist/* &&
+twine upload --disable-progress-bar --skip-existing dist/* &&
 exec rm -rf build dist CT3.egg-info
